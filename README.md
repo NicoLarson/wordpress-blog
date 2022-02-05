@@ -7,6 +7,8 @@
 
 ```css
 :root {
+  /* light mode*/
+  /* dark mode */
   --background: #282828;
   --foreground: #ebdbb2;
   --alpha: #00000000;
@@ -47,6 +49,9 @@
 ```
 
 ```css
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;400;600&family=Spartan:wght@200;400;600&display=swap');
+
+
 font-family: "JetBrains Mono", monospace;
 font-family: "Spartan", sans-serif;
 ```

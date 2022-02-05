@@ -19,8 +19,12 @@
   <header>
     <nav>
       <h1><a href="/"><?php bloginfo('name') ?></a> </h1>
-      <?php wp_nav_menu() ?>
+      <?php wp_nav_menu([
+        'theme_location' => 'header',
+        'container' => false,
+      ]) ?>
     </nav>
   </header>
 
-  <div class="container">
+  <main>
+    

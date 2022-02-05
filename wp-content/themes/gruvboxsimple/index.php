@@ -1,19 +1,20 @@
 <?php get_header() ?>
 <?php if (have_posts()) : ?>
-    <div class="row">
+    <ul class="posts-list">
         <?php while (have_posts()) : the_post(); ?>
-            <div class="col-sm-4" style="width: 18rem;">
-                <?php the_post_thumbnail('thumbnail', ['class' => 'card-img-top', 'alt' => '']) ?>
+            <li class="posts-list-item">
+                <?php the_post_thumbnail('medium') ?>
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title"><?php the_title() ?></h5>
-                        <p class="card-text"><?php the_excerpt() ?></p>
-                        <a href="<?php the_permalink() ?>" class="card-link">Lire l'article</a>
+                        <h2 class="card-title"><?php the_title() ?></h2>
+                        <?php the_excerpt() ?>
                     </div>
+                    <a href="<?php the_permalink() ?>" class="card-link">Lire</a>
                 </div>
-            </div>
+            </li>
         <?php endwhile ?>
-    </div>
+    </ul>
+
 <?php else : ?>
     <h1>Pas d'article</h1>
 <?php endif; ?>

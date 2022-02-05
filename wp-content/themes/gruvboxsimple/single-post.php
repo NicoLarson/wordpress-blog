@@ -2,10 +2,12 @@
 <?php if (have_posts()) :  while (have_posts()) : the_post(); ?>
     <article>
       <header>
-        <img src="<?php the_post_thumbnail_url() ?>" alt="">
+        <h2><?php the_title() ?></h2>
       </header>
-      <p>Date: <time datetime="<?php the_time('Y-m-d h:i') ?>"><?php the_time('d M Y') ?></time> </p>
-      <div>Catégories: </div> <?php the_category(' | ') ?> 
+      <div>
+        <p>Date: <time datetime="<?php the_time('Y-m-d h:i') ?>"><?php the_time('d M Y') ?></time> </p>
+        <?php the_tags('#',' #', '') ?>
+      </div>
       <p><?php the_content() ?></p>
     </article>
   <?php endwhile ?>
