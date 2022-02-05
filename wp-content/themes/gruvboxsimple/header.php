@@ -24,7 +24,12 @@
         'container' => false,
       ]) ?>
     </nav>
+    <div class="search-content">
+      <form action="#">
+        <input type="text" name="search" id="search" placeholder="Rechercher...">
+        <input type="submit" value="Recherche">
+      </form>
+    </div>
   </header>
 
   <main>
-    

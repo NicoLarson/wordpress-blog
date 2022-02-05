@@ -300,6 +300,17 @@ article li {
 
 :root {
   /* light mode*/
+  --l-bg: #fbf1c7;
+  --l-fg: #3c3836;
+  --l-gray-l: #7c6f64;
+  --l-aqua-l: #689d6a;
+  --l-aqua-d: #427b58;
+  --l-blue-l: #458588;
+  --l-blue-d: #076678;
+  --l-green-l: #98971a;
+  --l-green-d: #79740e;
+  --l-yellow-l: #d79921;
+  --l-yellow-d: #b57614;
   /* dark mode */
   --background: #282828;
   --foreground: #ebdbb2;
@@ -329,27 +340,44 @@ article li {
   /* 
   DARK MODE 
   */
+  --body-background: var(--l-bg);
+  --body-foreground: var(--l-fg);
+  --h1-color: var(--l-fg);
   --nav-border-color: var(--blue-light);
+  --search-content-border: var(--blue-light);
+  --nav-items-color: var(--l-fg);
   --article-border-color: var(--orange-light);
   --card-link-background: var(--orange-light);
   --card-link-color: var(--shade);
+  --search-input-background: var(--l-bg);
+  --search-input-color: var(--l-bg);
+  --search-input-border-color: var(--orange-dark);
+  --search-btn-border-color: var(--blue-light);
+  --search-btn-background: var(--blue-light);
+  --search-btn-color: var(--l-fg);
+  --post-info-color: var(--l-blue-d);
   --footer-background: var(--blue-light);
-  --h1-size: 3rem;
-  --h2-size: 2.6rem;
+  --footer-border-top-color: var(--blue-dark);
+  --h1-size: 2rem;
+  --h2-size: 1.8rem;
   --h3-size: 3rem;
   --p-size: 1rem;
-  --nav-item-size: 1.2rem;
+  --nav-item-size: 1rem;
   --card-title-size: 1.6rem;
-  --card-link-size: 1.2rem;
+  --card-link-size: 1rem;
   --body-font-family: "JetBrains Mono", monospace;
 }
 
 body {
   font-family: var(--body-font-family);
-  background-color: #121212;
-  color: var(--foreground);
+  background-color: var(--body-background);
+  color: var(--body-foreground);
 }
 
+header {
+  margin: 0 auto;
+  max-width: 80%;
+}
 header nav {
   padding: 2rem 0;
 }
@@ -359,25 +387,41 @@ header nav h1 {
 }
 header nav h1 a {
   font-size: var(--h1-size);
-  color: var(--foreground);
+  color: var(--h1-color);
 }
 header nav ul {
-  max-width: 60%;
-  margin: 0 auto;
   display: flex;
-  justify-content: space-evenly;
-  padding: 1.2rem 0;
-  border-top: 0.1rem solid var(--nav-border-color);
-  border-bottom: 0.1rem solid var(--nav-border-color);
 }
 header nav ul li a {
+  padding: 0 1rem 0 0;
   font-size: var(--nav-item-size);
-  color: var(--foreground);
+  color: var(--l-fg);
+}
+header .search-content {
+  border-top: 0.1rem solid var(--search-content-border);
+  border-bottom: 0.1rem solid var(--search-content-border);
+}
+header .search-content form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+header .search-content form input {
+  padding: 0.4rem;
+  background-color: var(--search-input-background);
+  border: 0.1rem solid var(--search-input-border-color);
+}
+header .search-content form input[type=submit] {
+  margin: 0 1rem;
+  background-color: var(--search-btn-background);
+  color: var(--search-btn-color);
+  border: 0.1rem solid var(--search-btn-border-color);
 }
 
 main {
   margin: 0 auto;
-  width: 60%;
+  width: 80%;
 }
 
 article header h2 {
@@ -392,32 +436,33 @@ article header h2 {
 
 .posts-list-item {
   display: flex;
-  margin: 1rem 0;
-  padding: 2rem;
-  border: 0.1rem solid var(--article-border-color);
-  background-color: var(--background);
+  flex-direction: column;
+  padding: 2rem 0;
 }
 .posts-list-item img {
   border-radius: 0.2rem;
 }
-.posts-list-item .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0 2rem;
-}
-.posts-list-item .card .card-body .card-title {
+.posts-list-item .post-title {
   font-size: var(--card-title-size);
+  padding: 1rem 0;
 }
-.posts-list-item .card .card-body p {
-  padding: 0.4rem 0;
+.posts-list-item p {
   font-size: var(--p-size);
   line-height: 1.4rem;
 }
-.posts-list-item .card .card-link {
+
+.post-info {
+  padding: 0.4rem 0;
+  color: var(--post-info-color);
+}
+.post-info a {
+  color: var(--post-info-color);
+}
+
+.post-link {
   max-width: 3.2rem;
-  margin: 1rem 0 0;
-  padding: 0.6rem 0.8rem;
+  padding: 0.4rem;
+  margin: 1rem 0;
   text-align: center;
   border-radius: 0.2rem;
   color: var(--card-link-color);
@@ -426,8 +471,13 @@ article header h2 {
 }
 
 footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100vh;
-  background-color: var(--footer-background);
+  width: 80%;
+  margin: 0 auto;
+  border-top: 0.32rem solid var(--footer-border-top-color);
 }
 
 /*# sourceMappingURL=style.css.map */
