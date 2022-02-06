@@ -6,7 +6,7 @@
       </header>
       <div>
         <p>Date: <time datetime="<?php the_time('Y-m-d h:i') ?>"><?php the_time('d M Y') ?></time> </p>
-        <?php the_tags('#',' #', '') ?>
+        <?php the_tags('#', ' #', '') ?>
       </div>
       <p><?php the_content() ?></p>
     </article>

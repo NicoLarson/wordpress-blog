@@ -2,6 +2,7 @@ article {
   div {
     font-size: 1rem;
     p {
+      margin: 0.2rem 0;
       color: var(--orange-light);
     }
     color: var(--blue-light);
@@ -96,6 +97,7 @@ article {
   p {
     font-size: 1.2rem;
     margin-bottom: 1.3rem;
+    line-height: 1.6rem;
   }
 
   h1,
@@ -120,8 +122,12 @@ article {
   h2 {
     font-size: 1.8rem;
   }
-  header h2 {
-    font-size: 2.827rem;
+
+  header {
+    margin: 0;
+    h2 {
+      font-size: 2.827rem;
+    }
   }
 
   h3,
@@ -174,5 +180,26 @@ article {
     list-style: circle;
     font-size: var(--p-size);
     line-height: 2rem;
+  }
+  table {
+    thead {
+      th {
+        padding: 0.8rem 1rem;
+        font-size: 1.2rem;
+        font-weight: bolder;
+        background-color: var(--l-blue-d);
+        color: var(--l-bg);
+        border: 0.1rem solid var(--l-orange-l);
+        text-transform: uppercase;
+      }
+    }
+    td {
+      padding: 0.8rem 1rem;
+      font-size: 1.2rem;
+      border: 0.1rem solid var(--l-orange-l);
+    }
+    tr:nth-child(2n + 1) {
+      background-color: var(--l-bg-1);
+    }
   }
 }

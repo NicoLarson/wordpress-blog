@@ -10,7 +10,8 @@
       bloginfo('name');
     } else {
       the_title();
-    } ?>
+    }
+    ?>
   </title>
   <?php wp_head() ?>
 </head>
@@ -19,6 +20,8 @@
   <header>
     <nav>
       <h1><a href="/"><?php bloginfo('name') ?></a> </h1>
+      <p><?php bloginfo('description')  ?></p>
+      
       <?php wp_nav_menu([
         'theme_location' => 'header',
         'container' => false,

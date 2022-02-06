@@ -1,11 +1,13 @@
 @use "reset";
 @use "markdown";
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;400;600&family=Spartan:wght@200;400;600&display=swap");
-
+@import url("http://fonts.cdnfonts.com/css/mrrobot");
 :root {
   /* light mode*/
   --l-bg: #fbf1c7;
+  --l-bg-1: #ebdbb2;
   --l-fg: #3c3836;
+  --l-fg-0: #282828;
   --l-gray-l: #7c6f64;
   --l-aqua-l: #689d6a;
   --l-aqua-d: #427b58;
@@ -15,6 +17,10 @@
   --l-green-d: #79740e;
   --l-yellow-l: #d79921;
   --l-yellow-d: #b57614;
+  --l-red-l: #cc241d;
+  --l-red-d: #9d0006;
+  --l-orange-l: #d65d0e;
+  --l-orange-d: #af3a08;
   /* dark mode */
   --background: #282828;
   --foreground: #ebdbb2;
@@ -49,7 +55,7 @@
   // COLORS
   --body-background: var(--l-bg);
   --body-foreground: var(--l-fg);
-  --h1-color: var(--l-fg);
+  --h1-color: var(--l-red-l);
   --nav-border-color: var(--blue-light);
   --search-content-border: var(--blue-light);
   --nav-items-color: var(--l-fg);
@@ -69,7 +75,7 @@
   --footer-background: var(--blue-light);
   --footer-border-top-color: var(--blue-dark);
   //   Police
-  --h1-size: 2rem;
+  --h1-size: 3.2rem;
   --h2-size: 1.8rem;
   --h3-size: 3rem;
   --p-size: 1rem;
@@ -96,6 +102,7 @@ header {
       padding: 2rem 0;
       text-align: center;
       a {
+        font-family: "MrRobot", "JetBrains Mono", monospace;
         font-size: var(--h1-size);
         color: var(--h1-color);
       }
@@ -107,6 +114,9 @@ header {
           padding: 0 1rem 0 0;
           font-size: var(--nav-item-size);
           color: var(--l-fg);
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }
@@ -150,17 +160,11 @@ header {
 }
 
 main {
-  padding: 2rem 0;
+  padding: 2rem 0 0;
   margin: 0 auto;
   width: 80%;
 }
 
-// ARTICLE
-article {
-  header h2 {
-    font-size: var(--h2-size);
-  }
-}
 // POSTLIST
 .posts-list {
   margin: 0 auto;
@@ -215,6 +219,16 @@ article {
   }
 }
 
+// PAGINATION
+
+.pagination {
+  font-size: 1rem;
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
 footer {
   display: flex;
   flex-direction: column;
@@ -229,6 +243,9 @@ footer {
       a {
         font-size: 1rem;
         line-height: 1.4rem;
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }

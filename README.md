@@ -1,7 +1,15 @@
 # wordpress-blog
 
-- Titre: Les notes de Nico
+- Titre: Les notes de Mr.YANG
 - Sous-titre:
+
+## TODO
+
+- [ ] Ajouter menu footer
+- [ ] Update style pour "Pas d'article"
+- [ ] Crée page 404
+- [ ] Ajouter la police MR ROBOT
+- [ ] Ajouter un dark mode
 
 ## Couleurs: GruvBox
 
@@ -58,7 +66,6 @@ font-family: "Spartan", sans-serif;
 
 ## Fonctionalité:
 
-- Quote générator
 - pagination
 - recherche articles
 

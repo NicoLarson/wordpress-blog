@@ -18,6 +18,7 @@
         <?php endwhile ?>
     </ul>
 
+    <?php the_posts_pagination() ?>
 <?php else : ?>
     <h1>Pas d'article</h1>
 <?php endif; ?>
