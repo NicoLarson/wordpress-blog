@@ -5,8 +5,8 @@
 
 ## TODO
 
-- [ ] Ajouter menu footer
-- [ ] Update style pour "Pas d'article"
+- [x] Ajouter menu footer
+- [x] Update style pour "Pas d'article"
 - [ ] Crée page 404
 - [ ] Ajouter la police MR ROBOT
 - [ ] Ajouter un dark mode

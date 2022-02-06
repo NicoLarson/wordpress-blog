@@ -73,7 +73,7 @@
   --post-info-color: var(--l-blue-d);
 
   --footer-background: var(--blue-light);
-  --footer-border-top-color: var(--blue-dark);
+  --footer-border-top-color: var(--l-red-l);
   //   Police
   --h1-size: 3.2rem;
   --h2-size: 1.8rem;
@@ -106,6 +106,10 @@ header {
         font-size: var(--h1-size);
         color: var(--h1-color);
       }
+    }
+    p {
+      font-size: 1.2rem;
+      padding-bottom: 2rem;
     }
     ul {
       display: flex;
@@ -163,6 +167,37 @@ main {
   padding: 2rem 0 0;
   margin: 0 auto;
   width: 80%;
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+}
+
+// ERROR 404
+.error-404 {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-family: "MrRobot", "JetBrains Mono", monospace;
+    font-size: 8rem;
+    text-align: center;
+    color: var(--l-red-l);
+  }
+  p {
+    padding: 1rem 0;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  img {
+    padding: 2rem 0;
+    max-width: 20rem;
+  }
+  a {
+    font-size: 1.2rem;
+  }
 }
 
 // POSTLIST
