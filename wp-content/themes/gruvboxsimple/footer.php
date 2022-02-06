@@ -6,7 +6,7 @@
         'menu_class'           => 'menu',
     )) ?>
     <iframe class="gif" src="https://giphy.com/embed/l0NwETBRcH7iWerCM" width="100%" height="auto" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-    <p>&copy; Copyright <?= date('Y') ?> <a href="/">NMY</a></p>
+    <p class="copyright">&copy; Copyright - <?= date('Y') ?> - <a href="/">gruvboxtheme</a> made by <a href="/">NY</a></p>
 </footer>
 <?php wp_footer() ?>
 

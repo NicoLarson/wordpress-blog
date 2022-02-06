@@ -25,10 +25,7 @@
       ]) ?>
     </nav>
     <div class="search-content">
-      <form action="#">
-        <input type="text" name="search" id="search" placeholder="Rechercher...">
-        <input type="submit" value="Recherche">
-      </form>
+      <?php get_search_form() ?>
     </div>
   </header>
 
