@@ -16,12 +16,13 @@
   <?php wp_head() ?>
 </head>
 
-<body>
+<body class="dark-theme || light-theme">
   <header>
+  <button class="btn-toggle">Toggle Dark Mode</button>
     <nav>
       <h1><a href="/"><?php bloginfo('name') ?></a> </h1>
       <p><?php bloginfo('description')  ?></p>
-      
+
       <?php wp_nav_menu([
         'theme_location' => 'header',
         'container' => false,

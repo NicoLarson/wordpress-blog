@@ -22,3 +22,4 @@ function gruvbox_simple_register_styles()
     wp_style_add_data('gruvbox-simple-style', 'rtl', 'replace');
 }
 add_action('wp_enqueue_scripts', 'gruvbox_simple_register_styles');
+wp_enqueue_script( 'my-script', get_template_directory_uri() . '/js/themeToggle.js', array(), true );

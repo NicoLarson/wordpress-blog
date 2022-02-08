@@ -1,7 +1,10 @@
 @use "reset";
 @use "markdown";
+@use "dark-theme";
+
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;400;600&family=Spartan:wght@200;400;600&display=swap");
 @import url("http://fonts.cdnfonts.com/css/mrrobot");
+
 :root {
   /* light mode*/
   --l-bg: #fbf1c7;
@@ -22,11 +25,8 @@
   --l-orange-l: #d65d0e;
   --l-orange-d: #af3a08;
   /* dark mode */
-  --background: #282828;
-  --foreground: #ebdbb2;
-  --alpha: #00000000;
-  --shade: #282828;
-  --background-tray: #1d2021;
+  --d-bg: #282828;
+  --d-fg: #ebdbb2;
   --red-dark: #cc241d;
   --red-light: #fb4939;
   --green-dark: #98971a;
@@ -46,7 +46,8 @@
   --blue-arch: #1793d1;
   --green-spotify: #1db954;
   --hover-color: #3c3a36;
-  --newtab-textbox-background-color: var(--background);
+
+  --newtab-textbox-background-color: var(--l-bg);
 
   /* 
   DARK MODE 
@@ -110,6 +111,7 @@ header {
     p {
       font-size: 1.2rem;
       padding-bottom: 2rem;
+      line-height: 1.8rem;
     }
     ul {
       display: flex;
@@ -190,6 +192,7 @@ main {
     padding: 1rem 0;
     font-size: 1.8rem;
     text-align: center;
+    line-height: 2rem;
   }
   img {
     padding: 2rem 0;
