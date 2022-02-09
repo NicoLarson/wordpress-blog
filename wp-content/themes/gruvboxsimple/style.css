@@ -154,14 +154,14 @@ article {
 }
 article div {
   font-size: 1rem;
-  color: var(--blue-light);
+  color: var(--l-blue-l);
 }
 article div p {
   margin: 0.2rem 0;
-  color: var(--orange-light);
+  color: var(--l-orange-l);
 }
 article div a {
-  color: var(--blue-light);
+  color: var(--l-blue-l);
 }
 article pre,
 article code {
@@ -237,19 +237,12 @@ article p {
   line-height: 1.6rem;
 }
 article h1,
-article .retro-h1,
 article h2,
-article .retro-h2,
 article h3,
-article .retro-h3,
-article h4,
-article .retro-h4 {
+article h4 {
   margin: 1.414rem 0 0.5rem;
-  font-weight: inherit;
-  line-height: 1.42;
 }
-article h1,
-article .retro-h1 {
+article h1 {
   margin-top: 0;
   font-size: 3.998rem;
 }
@@ -260,26 +253,23 @@ article header {
   margin: 0;
 }
 article header h2 {
-  font-size: 2.827rem;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  margin-bottom: 1rem;
 }
-article h3,
-article .retro-h3 {
+article h3 {
   font-size: 1.6rem;
 }
-article h4,
-article .retro-h4 {
+article h4 {
   font-size: 1.414rem;
 }
-article h5,
-article .retro-h5 {
+article h5 {
   font-size: 1.121rem;
 }
-article h6,
-article .retro-h6 {
+article h6 {
   font-size: 0.88rem;
 }
-article small,
-article .retro-small {
+article small {
   font-size: 0.707em;
 }
 article img,
@@ -295,7 +285,7 @@ article pre {
   background-color: #333;
 }
 article blockquote {
-  border-left: 3px solid #01ff70;
+  border-left: 3px solid var(--l-orange-l);
   padding-left: 1rem;
 }
 article li {
@@ -321,12 +311,262 @@ article table tr:nth-child(2n+1) {
   background-color: var(--l-bg-1);
 }
 
+:root {
+  /* dark mode */
+  --d-bg: #282828;
+  --d-fg: #ebdbb2;
+  --d-red-d: #cc241d;
+  --d-red-l: #fb4939;
+  --d-green-d: #98971a;
+  --d-green-l: #b8bb26;
+  --d-yellow-d: #d79921;
+  --d-yellow-l: #fabd2f;
+  --d-blue-d: #458588;
+  --d-blue-l: #83a598;
+  --d-purple-d: #b16286;
+  --d-purple-l: #d3869b;
+  --d-aqua-d: #689d6a;
+  --d-aqua-l: #8ec07c;
+  --d-orange-d: #d65d0e;
+  --d-orange-l: #fe8019;
+  --d-gray-d: #928374;
+  --d-gray-l: #a89984;
+}
+
 body.dark-theme {
   background-color: var(--d-bg);
 }
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme h5,
+body.dark-theme p,
+body.dark-theme li,
+body.dark-theme li > a {
+  color: var(--d-fg);
+  transition: 1s;
+}
+body.dark-theme .search-content {
+  border-color: var(--d-green-l);
+}
+body.dark-theme .search-content input {
+  border-color: var(--d-blue-l);
+  background-color: var(--d-bg);
+  color: var(--d-fg);
+}
+body.dark-theme .search-content input[type=submit] {
+  background-color: var(--d-blue-d);
+  border-color: var(--d-blue-d);
+  color: var(--d-bg);
+}
+body.dark-theme .post-info p {
+  color: var(--d-purple-d);
+}
+body.dark-theme .post-info a {
+  color: var(--d-blue-d);
+}
+body.dark-theme .post-link {
+  background-color: var(--d-red-d);
+  color: var(--d-fg);
+}
+body.dark-theme article div {
+  color: var(--d-blue-d);
+}
+body.dark-theme article div p {
+  color: var(--d-purple-d);
+}
+body.dark-theme article div a {
+  color: var(--d-blue-d);
+}
+body.dark-theme footer ul {
+  border-top: 0.32rem solid var(--d-green-l);
+}
 
 :root {
-  /* light mode*/
+  /** sunny side **/
+  --blue-background: none;
+  --blue-border: var(--l-blue-l);
+  --blue-color: var(--l-blue-d);
+  --yellow-background: var(--d-yellow-l);
+  --yellow-border: var(--d-yellow-d);
+  /** dark side **/
+  --indigo-background: none;
+  --indigo-border: var(--d-purple-l);
+  --indigo-color: var(--d-purple-d);
+  --gray-border: var(--d-gray-l);
+  --gray-dots: var(--d-gray-l);
+  /** general **/
+  --white: #fafafa;
+}
+
+.btn-toggle-container {
+  position: fixed;
+  right: -3rem;
+  top: 1.2rem;
+  transform: scale(0.28);
+}
+
+.toggle--checkbox {
+  display: none;
+}
+
+.toggle--checkbox:checked {
+  /** This will all flip from sun to moon **/
+  /** Change the label color **/
+}
+
+.toggle--checkbox:checked ~ .background {
+  background: var(--indigo-background);
+}
+
+.toggle--checkbox:checked + .toggle--label {
+  background: var(--indigo-color);
+  border-color: var(--indigo-border);
+  /** Change the cloud to stars **/
+  /** Change the sun into the moon **/
+  /** Show the dimples on the moon **/
+}
+
+.toggle--checkbox:checked + .toggle--label .toggle--label-background {
+  left: 60px;
+  width: 5px;
+}
+
+.toggle--checkbox:checked + .toggle--label .toggle--label-background:before {
+  width: 5px;
+  height: 5px;
+  top: -25px;
+}
+
+.toggle--checkbox:checked + .toggle--label .toggle--label-background:after {
+  width: 5px;
+  height: 5px;
+  left: -30px;
+  top: 20px;
+}
+
+.toggle--checkbox:checked + .toggle--label:before {
+  background: var(--white);
+  border-color: var(--gray-border);
+  animation-name: switch;
+  animation-duration: 350ms;
+  animation-fill-mode: forwards;
+}
+
+.toggle--checkbox:checked + .toggle--label:after {
+  transition-delay: 350ms;
+  opacity: 1;
+}
+
+.toggle--label {
+  /** Placeholder element, starting at blue **/
+  width: 200px;
+  height: 100px;
+  background: var(--blue-color);
+  border-radius: 100px;
+  border: 5px solid var(--blue-border);
+  display: flex;
+  position: relative;
+  transition: all 350ms ease-in;
+  /** The sun cloud and moon stars **/
+  /** Sun/Moon element **/
+  /** Gray dots on the moon **/
+}
+
+.toggle--label-background {
+  width: 10px;
+  height: 5px;
+  border-radius: 5px;
+  position: relative;
+  background: var(--white);
+  left: 135px;
+  top: 45px;
+  transition: all 150ms ease-in;
+}
+
+.toggle--label-background:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  width: 40px;
+  height: 5px;
+  border-radius: 5px;
+  background: var(--white);
+  left: -20px;
+  transition: all 150ms ease-in;
+}
+
+.toggle--label-background:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  width: 40px;
+  height: 5px;
+  border-radius: 5px;
+  background: var(--white);
+  left: -10px;
+  transition: all 150ms ease-in;
+}
+
+.toggle--label:before {
+  animation-name: reverse;
+  animation-duration: 350ms;
+  animation-fill-mode: forwards;
+  transition: all 350ms ease-in;
+  content: "";
+  width: 82px;
+  height: 82px;
+  border: 5px solid var(--yellow-border);
+  top: 4px;
+  left: 4px;
+  position: absolute;
+  border-radius: 82px;
+  background: var(--yellow-background);
+}
+
+.toggle--label:after {
+  transition-delay: 0ms;
+  transition: all 250ms ease-in;
+  position: absolute;
+  content: "";
+  box-shadow: var(--gray-dots) -13px 0 0 2px, var(--gray-dots) -24px 14px 0 -2px;
+  left: 143px;
+  top: 23px;
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+@keyframes switch {
+  0% {
+    left: 4px;
+  }
+  60% {
+    left: 4px;
+    width: 112px;
+  }
+  100% {
+    left: 104px;
+    width: 82px;
+  }
+}
+@keyframes reverse {
+  0% {
+    left: 104px;
+    width: 82px;
+  }
+  60% {
+    left: 72px;
+    width: 112px;
+  }
+  100% {
+    left: 4px;
+  }
+}
+:root {
+  /* light mode */
   --l-bg: #fbf1c7;
   --l-bg-1: #ebdbb2;
   --l-fg: #3c3836;
@@ -344,50 +584,31 @@ body.dark-theme {
   --l-red-d: #9d0006;
   --l-orange-l: #d65d0e;
   --l-orange-d: #af3a08;
-  /* dark mode */
-  --d-bg: #282828;
-  --d-fg: #ebdbb2;
-  --red-dark: #cc241d;
-  --red-light: #fb4939;
-  --green-dark: #98971a;
-  --green-light: #b8bb26;
-  --yellow-dark: #d79921;
-  --yellow-light: #fabd2f;
-  --blue-dark: #458588;
-  --blue-light: #83a598;
-  --purple-dark: #b16286;
-  --purple-light: #d3869b;
-  --aqua-dark: #689d6a;
-  --aqua-light: #8ec07c;
-  --orange-dark: #d65d0e;
-  --orange-light: #fe8019;
-  --gray-dark: #928374;
-  --gray-light: #a89984;
-  --blue-arch: #1793d1;
-  --green-spotify: #1db954;
-  --hover-color: #3c3a36;
   --newtab-textbox-background-color: var(--l-bg);
   /* 
-  DARK MODE 
+  COLORS
   */
   --body-background: var(--l-bg);
   --body-foreground: var(--l-fg);
   --h1-color: var(--l-red-l);
-  --nav-border-color: var(--blue-light);
-  --search-content-border: var(--blue-light);
+  --nav-border-color: var(--l-blue-l);
+  --search-content-border: var(--l-blue-l);
   --nav-items-color: var(--l-fg);
-  --article-border-color: var(--orange-light);
-  --card-link-background: var(--orange-light);
-  --card-link-color: var(--shade);
   --search-input-background: var(--l-bg);
   --search-input-color: var(--l-bg);
-  --search-input-border-color: var(--orange-dark);
-  --search-btn-border-color: var(--blue-light);
-  --search-btn-background: var(--blue-light);
+  --search-input-border-color: var(--l-orange-l);
+  --search-btn-border-color: var(--l-blue-l);
+  --search-btn-background: var(--l-blue-l);
   --search-btn-color: var(--l-fg);
   --post-info-color: var(--l-blue-d);
+  --article-border-color: var(--l-orange-l);
+  --card-link-background: var(--l-orange-l);
+  --card-link-color: var(--l-bg);
   --footer-background: var(--blue-light);
-  --footer-border-top-color: var(--l-red-l);
+  --footer-border-top-color: var(--l-blue-l);
+  /* 
+  FONTS
+  */
   --h1-size: 3.2rem;
   --h2-size: 1.8rem;
   --h3-size: 3rem;
@@ -395,63 +616,70 @@ body.dark-theme {
   --nav-item-size: 1rem;
   --card-title-size: 1.6rem;
   --card-link-size: 1rem;
-  --body-font-family: "JetBrains Mono", monospace;
 }
 
 body {
-  font-family: var(--body-font-family);
+  font-family: "JetBrains Mono", monospace;
   background-color: var(--body-background);
   color: var(--body-foreground);
+  transition: 1s;
 }
 
-header {
+.btn-toggle {
+  position: absolute;
+  right: 0;
+  margin: 1rem 2rem;
+}
+
+body > header {
   margin: 0 auto;
   max-width: 80%;
 }
-header nav {
+body > header nav {
   padding: 2rem 0;
 }
-header nav h1 {
+body > header nav h1 {
   padding: 2rem 0;
   text-align: center;
 }
-header nav h1 a {
+body > header nav h1 a {
   font-family: "MrRobot", "JetBrains Mono", monospace;
   font-size: var(--h1-size);
   color: var(--h1-color);
 }
-header nav p {
+body > header nav p {
   font-size: 1.2rem;
   padding-bottom: 2rem;
   line-height: 1.8rem;
 }
-header nav ul {
+body > header nav ul {
   display: flex;
 }
-header nav ul li a {
+body > header nav ul li a {
   padding: 0 1rem 0 0;
   font-size: var(--nav-item-size);
   color: var(--l-fg);
 }
-header nav ul li a:hover {
+body > header nav ul li a:hover {
   text-decoration: underline;
 }
-header .search-content {
+body > header .search-content {
   border-top: 0.2rem solid var(--search-content-border);
   border-bottom: 0.2rem solid var(--search-content-border);
 }
-header .search-content form div {
+body > header .search-content form div {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1rem 0;
 }
-header .search-content form div input {
+body > header .search-content form div input {
   padding: 0.4rem;
   background-color: var(--search-input-background);
   border: 0.1rem solid var(--search-input-border-color);
+  transition: 1s;
 }
-header .search-content form div input[type=submit] {
+body > header .search-content form div input[type=submit] {
   font-weight: 600;
   margin: 0 1rem;
   background-color: var(--search-btn-background);
@@ -460,10 +688,10 @@ header .search-content form div input[type=submit] {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   transition: 0.2s;
 }
-header .search-content form div input[type=submit]:hover {
+body > header .search-content form div input[type=submit]:hover {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
-header .search-content form div input[type=submit]:active {
+body > header .search-content form div input[type=submit]:active {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
@@ -588,6 +816,14 @@ footer ul li a:hover {
   text-align: center;
   font-size: 0.8rem;
   font-weight: 600;
+}
+
+@media screen and (min-width: 600px) {
+  body > header,
+main,
+footer {
+    max-width: 60%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

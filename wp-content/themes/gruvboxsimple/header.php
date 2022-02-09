@@ -16,9 +16,15 @@
   <?php wp_head() ?>
 </head>
 
-<body class="dark-theme || light-theme">
+<body class="light-theme">
   <header>
-  <button class="btn-toggle">Toggle Dark Mode</button>
+    <div class="btn-toggle-container">
+      <input type="checkbox" id="toggle" class="toggle--checkbox" />
+      <label for="toggle" class="toggle--label">
+        <span class="toggle--label-background"></span>
+      </label>
+      <div class="background"></div>
+    </div>
     <nav>
       <h1><a href="/"><?php bloginfo('name') ?></a> </h1>
       <p><?php bloginfo('description')  ?></p>

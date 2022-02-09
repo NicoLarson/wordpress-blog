@@ -1,0 +1,195 @@
+article {
+  div {
+    font-size: 1rem;
+    p {
+      margin: 0.2rem 0;
+      color: var(--l-orange-l);
+    }
+    color: var(--l-blue-l);
+    a {
+      color: var(--l-blue-l);
+    }
+  }
+
+  pre,
+  code {
+    font-family: Menlo, Monaco, "Courier New", monospace;
+  }
+
+  pre {
+    padding: 0.5rem;
+    line-height: 1.25;
+    overflow-x: scroll;
+  }
+
+  @media print {
+    *,
+    *:before,
+    *:after {
+      background: transparent !important;
+      color: #000 !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+      text-decoration: underline;
+    }
+
+    a[href]:after {
+      content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+      content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+      content: "";
+    }
+
+    pre,
+    blockquote {
+      border: 1px solid #999;
+      page-break-inside: avoid;
+    }
+
+    thead {
+      display: table-header-group;
+    }
+
+    tr,
+    img {
+      page-break-inside: avoid;
+    }
+
+    img {
+      max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+      orphans: 3;
+      widows: 3;
+    }
+
+    h2,
+    h3 {
+      page-break-after: avoid;
+    }
+  }
+
+  @media screen and (min-width: 32rem) and (max-width: 48rem) {
+    html {
+      font-size: 15px;
+    }
+  }
+
+  @media screen and (min-width: 48rem) {
+    html {
+      font-size: 16px;
+    }
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 1.3rem;
+    line-height: 1.6rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 1.414rem 0 0.5rem;
+  }
+
+  h1 {
+    margin-top: 0;
+    font-size: 3.998rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  header {
+    margin: 0;
+    h2 {
+      font-size: 2rem;
+      line-height: 2.4rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  h4 {
+    font-size: 1.414rem;
+  }
+
+  h5 {
+    font-size: 1.121rem;
+  }
+
+  h6 {
+    font-size: 0.88rem;
+  }
+
+  small {
+    font-size: 0.707em;
+  }
+
+  /* https://github.com/mrmrs/fluidity */
+
+  img,
+  canvas,
+  iframe,
+  video,
+  svg,
+  select,
+  textarea {
+    max-width: 100%;
+  }
+
+  pre {
+    background-color: #333;
+  }
+
+  blockquote {
+    border-left: 3px solid var(--l-orange-l);
+    padding-left: 1rem;
+  }
+
+  li {
+    list-style: circle;
+    font-size: var(--p-size);
+    line-height: 2rem;
+  }
+  table {
+    thead {
+      th {
+        padding: 0.8rem 1rem;
+        font-size: 1.2rem;
+        font-weight: bolder;
+        background-color: var(--l-blue-d);
+        color: var(--l-bg);
+        border: 0.1rem solid var(--l-orange-l);
+        text-transform: uppercase;
+      }
+    }
+    td {
+      padding: 0.8rem 1rem;
+      font-size: 1.2rem;
+      border: 0.1rem solid var(--l-orange-l);
+    }
+    tr:nth-child(2n + 1) {
+      background-color: var(--l-bg-1);
+    }
+  }
+}

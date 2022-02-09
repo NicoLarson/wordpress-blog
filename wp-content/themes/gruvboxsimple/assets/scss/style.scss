@@ -1,12 +1,13 @@
 @use "reset";
-@use "markdown";
+@use "article";
 @use "dark-theme";
+@use "btn-toogle";
 
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;400;600&family=Spartan:wght@200;400;600&display=swap");
 @import url("http://fonts.cdnfonts.com/css/mrrobot");
 
 :root {
-  /* light mode*/
+  /* light mode */
   --l-bg: #fbf1c7;
   --l-bg-1: #ebdbb2;
   --l-fg: #3c3836;
@@ -24,58 +25,42 @@
   --l-red-d: #9d0006;
   --l-orange-l: #d65d0e;
   --l-orange-d: #af3a08;
-  /* dark mode */
-  --d-bg: #282828;
-  --d-fg: #ebdbb2;
-  --red-dark: #cc241d;
-  --red-light: #fb4939;
-  --green-dark: #98971a;
-  --green-light: #b8bb26;
-  --yellow-dark: #d79921;
-  --yellow-light: #fabd2f;
-  --blue-dark: #458588;
-  --blue-light: #83a598;
-  --purple-dark: #b16286;
-  --purple-light: #d3869b;
-  --aqua-dark: #689d6a;
-  --aqua-light: #8ec07c;
-  --orange-dark: #d65d0e;
-  --orange-light: #fe8019;
-  --gray-dark: #928374;
-  --gray-light: #a89984;
-  --blue-arch: #1793d1;
-  --green-spotify: #1db954;
-  --hover-color: #3c3a36;
 
   --newtab-textbox-background-color: var(--l-bg);
 
   /* 
-  DARK MODE 
+  COLORS
   */
 
-  // COLORS
+  // Header
   --body-background: var(--l-bg);
   --body-foreground: var(--l-fg);
   --h1-color: var(--l-red-l);
-  --nav-border-color: var(--blue-light);
-  --search-content-border: var(--blue-light);
+  --nav-border-color: var(--l-blue-l);
+  --search-content-border: var(--l-blue-l);
   --nav-items-color: var(--l-fg);
-  --article-border-color: var(--orange-light);
-  --card-link-background: var(--orange-light);
-  --card-link-color: var(--shade);
+
+  // Search
   --search-input-background: var(--l-bg);
   --search-input-color: var(--l-bg);
-  --search-input-border-color: var(--orange-dark);
-  --search-btn-border-color: var(--blue-light);
-  --search-btn-background: var(--blue-light);
+  --search-input-border-color: var(--l-orange-l);
+  --search-btn-border-color: var(--l-blue-l);
+  --search-btn-background: var(--l-blue-l);
   --search-btn-color: var(--l-fg);
 
   // ARTICLE
   --post-info-color: var(--l-blue-d);
+  --article-border-color: var(--l-orange-l);
+  --card-link-background: var(--l-orange-l);
+  --card-link-color: var(--l-bg);
 
+  // Footer
   --footer-background: var(--blue-light);
-  --footer-border-top-color: var(--l-red-l);
-  //   Police
+  --footer-border-top-color: var(--l-blue-l);
+
+  /* 
+  FONTS
+  */
   --h1-size: 3.2rem;
   --h2-size: 1.8rem;
   --h3-size: 3rem;
@@ -83,18 +68,24 @@
   --nav-item-size: 1rem;
   --card-title-size: 1.6rem;
   --card-link-size: 1rem;
-  --body-font-family: "JetBrains Mono", monospace;
 }
 
 // FIRST MOBILE
 
 body {
-  font-family: var(--body-font-family);
+  font-family: "JetBrains Mono", monospace;
   background-color: var(--body-background);
   color: var(--body-foreground);
+  transition: 1s;
 }
 
-header {
+.btn-toggle{
+  position: absolute;
+  right: 0;
+  margin: 1rem 2rem;
+}
+
+body > header {
   margin: 0 auto;
   max-width: 80%;
   nav {
@@ -141,6 +132,7 @@ header {
           padding: 0.4rem;
           background-color: var(--search-input-background);
           border: 0.1rem solid var(--search-input-border-color);
+          transition: 1s;
         }
         input[type="submit"] {
           font-weight: 600;
@@ -294,4 +286,12 @@ footer {
   text-align: center;
   font-size: 0.8rem;
   font-weight: 600;
+}
+
+@media screen and (min-width: 600px) {
+  body > header,
+  main,
+  footer {
+    max-width: 60%;
+  }
 }

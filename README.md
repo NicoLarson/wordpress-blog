@@ -7,8 +7,8 @@
 
 - [x] Ajouter menu footer
 - [x] Update style pour "Pas d'article"
-- [ ] Crée page 404
-- [ ] Ajouter la police MR ROBOT
+- [x] Crée page 404
+- [x] Ajouter la police MR ROBOT
 - [ ] Ajouter un dark mode
 
 ## Couleurs: GruvBox
