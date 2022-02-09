@@ -4,7 +4,15 @@
 @use "btn-toogle";
 
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;400;600&family=Spartan:wght@200;400;600&display=swap");
-@import url("http://fonts.cdnfonts.com/css/mrrobot");
+
+@font-face {
+  font-family: 'MrRobot';
+  font-style: normal;
+  font-weight: 400;
+  src: local('MrRobot'), url('https://fonts.cdnfonts.com/s/13766/MR ROBOT.woff') format('woff');
+}
+
+
 
 :root {
   /* light mode */

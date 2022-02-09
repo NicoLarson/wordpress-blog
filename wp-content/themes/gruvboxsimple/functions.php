@@ -16,10 +16,10 @@ add_action('after_setup_theme', 'gruvbox_simple_theme_supports');
 function gruvbox_simple_register_styles()
 {
 
-    wp_enqueue_style('gruvbox-simple-search-style', get_template_directory_uri() . './style.css', array(), wp_get_theme()->get('Version'));
+    wp_enqueue_style('gruvbox-simple-search-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get('Version'));
 
     // RTL styles.
     wp_style_add_data('gruvbox-simple-style', 'rtl', 'replace');
 }
 add_action('wp_enqueue_scripts', 'gruvbox_simple_register_styles');
-wp_enqueue_script( 'my-script', get_template_directory_uri() . './assets/js/themeToogle.js', array(), true );
+wp_enqueue_script( 'my-script', get_template_directory_uri() . '/assets/js/themeToogle.js', array(), true );
